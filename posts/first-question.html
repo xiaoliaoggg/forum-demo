@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>示例提问：想换掉默认配色，该改哪里？ · 自由讨论区</title>
+<meta name="description" content="一个演示用的提问帖。">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="../index.html"><span class="brand-mark">◈</span><span>自由讨论区</span></a>
+    <nav class="nav">
+      <a href="../index.html#posts">全部帖子</a>
+      <a class="ghost-btn" href="https://github.com/xiaoliaoggg/forum-demo" target="_blank" rel="noopener">GitHub 仓库</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <a class="back-link" href="../index.html">← 返回帖子列表</a>
+  <article class="article">
+    <div class="post-cat cat-提问">提问</div>
+    <h1>示例提问：想换掉默认配色，该改哪里？</h1>
+    <div class="article-meta"><span>2026-11-17</span><span>·</span><span>提问</span><span>·</span><span>待回答</span></div>
+
+    <div class="article-body">
+      <p>这是一个演示用的提问帖，用来展示帖子页底部的评论区效果，顺便给第一个真实提问占个位置。</p>
+
+      <p>假设我想把主色从蓝色换成绿色，应该改哪里？</p>
+
+      <ul>
+        <li>答案在 <code>assets/style.css</code> 顶部的 <code>--accent</code> 和 <code>--accent-soft</code> 两个变量</li>
+        <li>深色模式在 <code>@media (prefers-color-scheme: dark)</code> 里还有一份，要一起改</li>
+        <li>giscus 评论区的主题是 <code>data-theme="preferred_color_scheme"</code>，会跟随系统，不需要单独改</li>
+      </ul>
+
+      <p>真实场景里，这类问题放在 Discussions 的 Q&amp;A 分类会更合适：可以标记最佳答案。</p>
+    </div>
+
+    <section class="comments">
+      <h2>评论</h2>
+      <p class="hint">登录 GitHub 后可以在这里回答。</p>
+      <div class="giscus"></div>
+    </section>
+  </article>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap"><span>© 2026 自由讨论区</span><span>Powered by GitHub Pages &amp; giscus</span></div>
+</footer>
+
+<script src="https://giscus.app/client.js"
+        data-repo="xiaoliaoggg/forum-demo"
+        data-repo-id="R_kgDOVx73Mg"
+        data-category="Announcements"
+        data-category-id="DIC_kwDOVx73Ms4DLWgc"
+        data-mapping="pathname"
+        data-strict="0"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="top"
+        data-theme="preferred_color_scheme"
+        data-lang="zh-CN"
+        data-loading="lazy"
+        crossorigin="anonymous"
+        async>
+</script>
+</body>
+</html>
