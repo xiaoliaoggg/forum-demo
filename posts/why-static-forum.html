@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>为什么我选择静态页 + 评论区而不是真论坛 · 自由讨论区</title>
+<meta name="description" content="静态论坛与 Discourse 的取舍。">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="../index.html"><span class="brand-mark">◈</span><span>自由讨论区</span></a>
+    <nav class="nav">
+      <a href="../index.html#posts">全部帖子</a>
+      <a class="ghost-btn" href="https://github.com/xiaoliaoggg/forum-demo" target="_blank" rel="noopener">GitHub 仓库</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <a class="back-link" href="../index.html">← 返回帖子列表</a>
+  <article class="article">
+    <div class="post-cat cat-闲聊">闲聊</div>
+    <h1>为什么我选择“静态页 + 评论区”而不是真论坛</h1>
+    <div class="article-meta"><span>2026-11-17</span><span>·</span><span>闲聊</span><span>·</span><span>随笔</span></div>
+
+    <div class="article-body">
+      <p>Discourse 很强：实时、全文搜索、权限组、邮件通知、插件生态。但它也需要一台至少 2GB 内存的服务器、一个域名、定期的系统更新和备份。对一个十几个人、偶尔聊几句的小圈子来说，这些运维成本远远超过它带来的价值。</p>
+
+      <p>静态方案的成本结构完全不同：</p>
+      <ul>
+        <li><strong>托管费</strong>：0，Pages 免费额度对文本站绰绰有余</li>
+        <li><strong>运维</strong>：0，没有系统要打补丁，没有数据库要备份</li>
+        <li><strong>安全性</strong>：攻击面几乎只有 GitHub 本身</li>
+        <li><strong>数据</strong>：评论在 Discussions，随时可导出</li>
+      </ul>
+
+      <p>换来的是三个妥协：必须用 GitHub 账号、发帖要改仓库、没有版块权限。如果这三条对你的社区不致命，那静态方案就是更理性的选择。</p>
+
+      <blockquote>论坛的价值在“人”和“内容”，不在“论坛软件”。先有人讨论，再考虑要不要升级到 Discourse。</blockquote>
+    </div>
+
+    <section class="comments">
+      <h2>评论</h2>
+      <p class="hint">欢迎在下面聊聊你的取舍。</p>
+      <div class="giscus"></div>
+    </section>
+  </article>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap"><span>© 2026 自由讨论区</span><span>Powered by GitHub Pages &amp; giscus</span></div>
+</footer>
+
+<script src="https://giscus.app/client.js"
+        data-repo="xiaoliaoggg/forum-demo"
+        data-repo-id="R_kgDOVx73Mg"
+        data-category="Announcements"
+        data-category-id="DIC_kwDOVx73Ms4DLWgc"
+        data-mapping="pathname"
+        data-strict="0"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="top"
+        data-theme="preferred_color_scheme"
+        data-lang="zh-CN"
+        data-loading="lazy"
+        crossorigin="anonymous"
+        async>
+</script>
+</body>
+</html>
