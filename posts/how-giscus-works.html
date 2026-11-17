@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>giscus 是怎么把评论存进 Discussions 的 · 自由讨论区</title>
+<meta name="description" content="拆解 giscus 的完整链路。">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="../index.html"><span class="brand-mark">◈</span><span>自由讨论区</span></a>
+    <nav class="nav">
+      <a href="../index.html#posts">全部帖子</a>
+      <a class="ghost-btn" href="https://github.com/xiaoliaoggg/forum-demo" target="_blank" rel="noopener">GitHub 仓库</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <a class="back-link" href="../index.html">← 返回帖子列表</a>
+  <article class="article">
+    <div class="post-cat cat-技术">技术</div>
+    <h1>giscus 是怎么把评论存进 Discussions 的</h1>
+    <div class="article-meta"><span>2026-11-17</span><span>·</span><span>技术</span><span>·</span><span>3 分钟阅读</span></div>
+
+    <div class="article-body">
+      <p>页面上只加了一段 <code>&lt;script&gt;</code>，评论区就出现了。中间其实发生了这么几件事。</p>
+
+      <h2>1. iframe 加载</h2>
+      <p><code>client.js</code> 读取 <code>data-repo</code>、<code>data-repo-id</code>、<code>data-category-id</code>，然后往页面里注入一个指向 <code>giscus.app</code> 的 iframe。真正的 UI 和逻辑都在 iframe 里，和你的站点隔离，所以不用担心样式冲突。</p>
+
+      <h2>2. 定位 discussion</h2>
+      <p>giscus 用 <code>data-mapping</code> 决定“这篇页面”对应哪个 discussion：</p>
+      <ul>
+        <li><code>pathname</code>：用页面路径，推荐，改标题不会丢评论</li>
+        <li><code>url</code>：用完整 URL</li>
+        <li><code>title</code>：用页面标题</li>
+        <li><code>og:title</code> / <code>specific</code>：自定义</li>
+      </ul>
+      <p>找不到对应 discussion 时，它会用 GitHub App 的权限自动新建一个，标题就是页面标题。</p>
+
+      <h2>3. 登录与写入</h2>
+      <p>用户点“登录”会走 GitHub OAuth，授权给 giscus App。之后的评论、回复、reaction 都通过 GitHub GraphQL API 写进 Discussions，而不是写进某个第三方数据库。</p>
+
+      <h2>4. 数据归属</h2>
+      <p>这一点很重要：<strong>评论数据在你自己仓库的 Discussions 里</strong>。你可以用 GitHub 搜索、用 API 导出、迁移到别处，不会被某个评论服务商锁死。</p>
+
+      <blockquote>代价是：访客必须有 GitHub 账号。这是所有 GitHub 系评论方案共同的硬限制。</blockquote>
+    </div>
+
+    <section class="comments">
+      <h2>评论</h2>
+      <p class="hint">这篇文章的评论会出现在对应路径的 discussion 里。</p>
+      <div class="giscus"></div>
+    </section>
+  </article>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap"><span>© 2026 自由讨论区</span><span>Powered by GitHub Pages &amp; giscus</span></div>
+</footer>
+
+<script src="https://giscus.app/client.js"
+        data-repo="xiaoliaoggg/forum-demo"
+        data-repo-id="R_kgDOVx73Mg"
+        data-category="Announcements"
+        data-category-id="DIC_kwDOVx73Ms4DLWgc"
+        data-mapping="pathname"
+        data-strict="0"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="top"
+        data-theme="preferred_color_scheme"
+        data-lang="zh-CN"
+        data-loading="lazy"
+        crossorigin="anonymous"
+        async>
+</script>
+</body>
+</html>
