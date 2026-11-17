@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>欢迎来到自由讨论区 · 自由讨论区</title>
+<meta name="description" content="这个论坛是怎么用 GitHub Pages + giscus 搭起来的。">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="../index.html"><span class="brand-mark">◈</span><span>自由讨论区</span></a>
+    <nav class="nav">
+      <a href="../index.html#posts">全部帖子</a>
+      <a class="ghost-btn" href="https://github.com/xiaoliaoggg/forum-demo" target="_blank" rel="noopener">GitHub 仓库</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <a class="back-link" href="../index.html">← 返回帖子列表</a>
+  <article class="article">
+    <div class="post-cat cat-公告">公告</div>
+    <h1>欢迎来到自由讨论区</h1>
+    <div class="article-meta"><span>2026-11-17</span><span>·</span><span>公告</span></div>
+
+    <div class="article-body">
+      <p>这是一个完全跑在 GitHub 上的论坛：页面由 GitHub Pages 静态托管，帖子是仓库里的 HTML 文件，讨论和回复存在 GitHub Discussions 里，通过 giscus 嵌在每篇文章底部。</p>
+
+      <h2>它能做什么</h2>
+      <ul>
+        <li>浏览帖子、按分类筛选、站内搜索</li>
+        <li>用 GitHub 账号在帖子下方评论、回复、点表情</li>
+        <li>评论自动同步到 Discussions，可被搜索、可被导出</li>
+        <li>零服务器、零数据库、零月费</li>
+      </ul>
+
+      <h2>它不能做什么</h2>
+      <ul>
+        <li>没有站内注册，评论者必须有 GitHub 账号</li>
+        <li>不能直接在网页里发新帖，新帖需要提交 PR 或去 Discussions 发</li>
+        <li>没有私信、用户主页、权限组这些重型论坛功能</li>
+      </ul>
+
+      <p>如果你能接受这三条限制，它就是成本最低的“有个地方讨论”的方案。</p>
+    </div>
+
+    <section class="comments">
+      <h2>评论</h2>
+      <p class="hint">评论由 giscus 提供，使用 GitHub 账号登录后即可发言。</p>
+      <div class="giscus"></div>
+    </section>
+  </article>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap"><span>© 2026 自由讨论区</span><span>Powered by GitHub Pages &amp; giscus</span></div>
+</footer>
+
+<script src="https://giscus.app/client.js"
+        data-repo="xiaoliaoggg/forum-demo"
+        data-repo-id="R_kgDOVx73Mg"
+        data-category="Announcements"
+        data-category-id="DIC_kwDOVx73Ms4DLWgc"
+        data-mapping="pathname"
+        data-strict="0"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="top"
+        data-theme="preferred_color_scheme"
+        data-lang="zh-CN"
+        data-loading="lazy"
+        crossorigin="anonymous"
+        async>
+</script>
+</body>
+</html>
